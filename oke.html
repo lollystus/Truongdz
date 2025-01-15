@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi giải đố - Doremon</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff6347;
+            text-shadow: 2px 2px 10px rgba(255, 99, 71, 0.8);
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .quiz-container p {
+            font-size: 1.2em;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+
+        .doremon-img {
+            width: 200px;
+            margin-top: 30px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Câu hỏi giải đố - Doremon</h1>
+    <div class="quiz-container">
+        <p>Nhấn vào nút dưới đây để bắt đầu trả lời câu hỏi!</p>
+        <button class="button" onclick="showQuiz()">Bắt đầu</button>
+        <img class="doremon-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Doraemon_character_2020.png" alt="Doremon">
+    </div>
+
+    <div class="footer">
+        <p>Chúc bạn chơi vui vẻ! <br> <a href="#">Giới thiệu Doremon</a></p>
+    </div>
+
+    <script>
+        function showQuiz() {
+            var questions = [
+                {
+                    question: "Câu hỏi 1: Đâu là thủ đô của Việt Nam?",
+                    options: "A. Hà Nội\nB. TP.HCM\nC. Đà Nẵng\nD. Hải Phòng",
+                    correctAnswer: "A"
+                },
+                {
+                    question: "Câu hỏi 2: Ai là tác giả của 'Chí Phèo'?",
+                    options: "A. Nam Cao\nB. Tô Hoài\nC. Nguyễn Du\nD. Hồ Chí Minh",
+                    correctAnswer: "A"
+                },
+                {
+                    question: "Câu hỏi 3: Đỉnh núi cao nhất Việt Nam là gì?",
+                    options: "A. Fansipan\nB. Ba Na\nC. Lang Biang\nD. Đà Lạt",
+                    correctAnswer: "A"
+                },
+                {
+                    question: "Câu hỏi 4: Màu sắc của lá cờ Việt Nam là gì?",
+                    options: "A. Đỏ\nB. Vàng\nC. Xanh\nD. Trắng",
+                    correctAnswer: "A"
+                }
+            ];
+
+            var score = 0;
+            for (var i = 0; i < questions.length; i++) {
+                var answer = prompt(questions[i].question + "\n\n" + questions[i].options);
+                if (answer.toUpperCase() === questions[i].correctAnswer) {
+                    alert("Đúng rồi!");
+                    score++;
+                } else {
+                    alert("Sai! Đáp án đúng là: " + questions[i].correctAnswer);
+                }
+            }
+            alert("Bạn đã trả lời đúng " + score + " câu.");
+        }
+    </script>
+</body>
+</html>
